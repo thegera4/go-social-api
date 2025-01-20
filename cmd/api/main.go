@@ -3,7 +3,9 @@ package main
 import (
 	"log"
 	"os"
+
 	"github.com/joho/godotenv"
+	"github.com/thegera4/go-social-api/internal/store"
 )
 
 func main() {
@@ -18,9 +20,12 @@ func main() {
 		addr: os.Getenv("ADDR"),
 	}
 	
+	store := store.NewStorage(nil)
+
 	// application struct
 	app := &application{
 		config: cfg,
+		store: store,
 	}
 
 	// mount the mux

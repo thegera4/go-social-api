@@ -6,11 +6,13 @@ import (
 	"time"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/thegera4/go-social-api/internal/store"
 )
 
 // Contains the main configuration settings for our application.
 type application struct {
 	config  config
+	store  store.Storage
 }
 
 // Holds the configuration settings for our application.
