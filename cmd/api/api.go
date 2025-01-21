@@ -15,9 +15,18 @@ type application struct {
 	store  store.Storage
 }
 
-// Holds the configuration settings for our application.
+// Configuration settings for our application.
 type config struct {
-	addr string
+	addr 	string
+	db		dbConfig
+}
+
+// Configuration settings for our database.
+type dbConfig struct {
+	addr 					string
+	maxOpenConns 	int
+	maxIdleConns 	int
+	maxIdleTime		string
 }
 
 // Method that returns a new server mux for our application.
